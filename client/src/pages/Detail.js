@@ -82,7 +82,10 @@ function Detail() {
       type: REMOVE_FROM_CART,
       _id: currentProduct._id
     });
+
+    idbPromise('cart', 'delete', { ...currentProduct });
   };
+  
   return (
     <>
       {currentProduct ? (
