@@ -14,6 +14,10 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
+import Success from "./pages/Sucess";
+// redux hook and store
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import OrderHistory from './pages/OrderHistory';
 
 const httpLink = createHttpLink({
@@ -40,15 +44,18 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
+          <Provider store={store}>
           <Nav />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/orderHistory" component={OrderHistory} />
-            <Route exact path="/products/:id" component={Detail} />
-            <Route component={NoMatch} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/orderHistory" component={OrderHistory} />
+          <Route exact path="/products/:id" component={Detail} />
+          <Route exact path="/success" component={Success} />
+          <Route component={NoMatch} />
           </Switch>
+          </Provider>
         </div>
       </Router>
     </ApolloProvider>
