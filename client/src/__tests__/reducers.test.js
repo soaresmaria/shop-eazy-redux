@@ -42,9 +42,9 @@ import {
   
     expect(newState.products.length).toBe(2);
     expect(initialState.products.length).toBe(0);
-});
+  });
 
-test('UPDATE_CATEGORIES', () => {
+  test('UPDATE_CATEGORIES', () => {
     let newState = reducer(initialState, {
       type: UPDATE_CATEGORIES,
       categories: [{}, {}]
@@ -112,7 +112,7 @@ test('UPDATE_CATEGORIES', () => {
       _id: '1',
       purchaseQuantity: 3
     });
-
+  
     expect(newState.cartOpen).toBe(true);
     expect(newState.cart[0].purchaseQuantity).toBe(3);
     expect(newState.cart[1].purchaseQuantity).toBe(2);

@@ -9,17 +9,17 @@ import {
   ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from "../utils/actions";
-import { QUERY_PRODUCTS } from '../utils/queries';
+import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
-import spinner from '../assets/spinner.gif';
+import spinner from '../assets/spinner.gif'
 
 function Detail() {
-
   const state = useSelector((state) => {
     return state
   });
   const dispatch = useDispatch();
 
+  
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});
@@ -85,20 +85,28 @@ function Detail() {
 
     idbPromise('cart', 'delete', { ...currentProduct });
   };
-  
+
   return (
     <>
-      {currentProduct ? (
+      {currentProduct && cart ? (
         <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+          <Link to="/">
+            ← Back to Products
+          </Link>
 
           <h2>{currentProduct.name}</h2>
 
-          <p>{currentProduct.description}</p>
+          <p>
+            {currentProduct.description}
+          </p>
 
           <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
+            <strong>Price:</strong>
+            ${currentProduct.price}
+            {" "}
+            <button onClick={addToCart}>
+              Add to Cart
+            </button>
             <button 
               disabled={!cart.find(p => p._id === currentProduct._id)} 
               onClick={removeFromCart}
@@ -113,9 +121,12 @@ function Detail() {
           />
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      {
+        loading ? <img src={spinner} alt="loading" /> : null
+      }
+      <Cart />
     </>
   );
-}
+};
 
 export default Detail;
