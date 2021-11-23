@@ -7,7 +7,7 @@ import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif"
 import { idbPromise } from "../../utils/helpers";
 
-function ProductList({ }) {
+function ProductList() {
   const state = useSelector((state) => {
     return state
   });

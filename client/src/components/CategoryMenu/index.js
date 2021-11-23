@@ -5,7 +5,7 @@ import { QUERY_CATEGORIES } from "../../utils/queries";
 import { useDispatch, useSelector } from 'react-redux';
 import { idbPromise } from '../../utils/helpers';
 
-function CategoryMenu({}) {
+function CategoryMenu() {
   const state = useSelector((state) => {
     return state
   });
