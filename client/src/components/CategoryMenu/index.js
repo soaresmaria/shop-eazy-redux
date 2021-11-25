@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { useDispatch, useSelector } from 'react-redux';
 import { idbPromise } from '../../utils/helpers';

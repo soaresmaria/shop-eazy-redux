@@ -6,7 +6,7 @@ import Auth from '../../utils/auth';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadStripe } from "@stripe/stripe-js";
-import { useLazyQuery } from '@apollo/react-hooks';
+import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from "../../utils/queries"
 
 // API key in context of REACT as testing key.

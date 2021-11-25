@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from "../ProductItem";
 import { QUERY_PRODUCTS } from "../../utils/queries";
